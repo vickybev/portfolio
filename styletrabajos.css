@@ -1,0 +1,125 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #283270;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+}
+
+.content {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+
+}
+
+.gallery-container {
+  width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.gallery-images {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+
+.gallery-images .image {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-images .image img {
+  width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.gallery-images .image:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-images .image .prev, 
+.gallery-images .image .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gallery-images .image .prev {
+  left: 10px;
+}
+
+.gallery-images .image .next {
+  right: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Mostrar la imagen activa */
+#img1:checked ~ .gallery-images .image:nth-child(1),
+#img2:checked ~ .gallery-images .image:nth-child(2),
+#img3:checked ~ .gallery-images .image:nth-child(3),
+#img4:checked ~ .gallery-images .image:nth-child(4) {
+  display: flex;
+}
+
+/* Miniaturas */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.thumbnails label {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.thumbnails label:hover {
+  opacity: 1;
+}
+
+.thumbnails label img {
+  width: 200px;
+  height: 160px;
+  object-fit:cover;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+#img1:checked ~ .thumbnails label:nth-child(1) img,
+#img2:checked ~ .thumbnails label:nth-child(2) img,
+#img3:checked ~ .thumbnails label:nth-child(3) img,
+#img4:checked ~ .thumbnails label:nth-child(4) img {
+  border-color: #007BFF;
+  opacity: 1;
+}

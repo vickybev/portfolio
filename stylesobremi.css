@@ -1,0 +1,40 @@
+header {
+    background-color: #283270;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+}
+
+body {
+    font-family: Impact, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.branding {
+    
+    animation: bounce 1s infinite;
+    width: 900px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.gif1 {
+    max-width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+}
